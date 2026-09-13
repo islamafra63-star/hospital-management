@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Care Hospital</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .hero {
+            background-color: #eaf7ff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .service-card,
+        .doctor-card {
+            height: 100%;
+        }
+
+        .form-section {
+            background-color: #f8f9fa;
+        }
+
+        footer {
+            background-color: #212529;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">Care Hospital</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#doctors">Doctors</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#appointment">Appointment</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#signin">Sign In</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#signup">Sign Up</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Home -->
+    <section id="home" class="hero">
+
+        <div class="container">
+
+            <h1>Welcome to Care Hospital</h1>
+
+            <p class="mt-3">
+                Your Health, Our Priority
+            </p>
+
+            <a href="#appointment" class="btn btn-primary mt-3">
+                Book an Appointment
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Services -->
+    <section id="services" class="py-5">
+
+        <div class="container">
+
+            <h2 class="section-title">Our Services</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="card shadow service-card">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Emergency Care
+                            </h5>
+
+                            <p class="card-text">
+                                We provide emergency medical services
+                                for patients when they need urgent care.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="card shadow service-card">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Medical Checkup
+                            </h5>
+
+                            <p class="card-text">
+                                Regular health checkups help you
+                                maintain a healthy lifestyle.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="card shadow service-card">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Pharmacy
+                            </h5>
+
+                            <p class="card-text">
+                                Get the medicines prescribed by
+                                our qualified doctors.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- Doctors -->
+<section id="doctors" class="py-5 bg-light">
+
+    <div class="container">
+
+        <h2 class="text-center mb-4">
+            Our Doctors
+        </h2>
+
+        <div class="row">
+
+            <!-- Dr. Iqbal Mahmud -->
+            <div class="col-md-4 mb-3">
+
+                <div class="card doctor-card p-3">
+
+                    <h4>Dr. Iqbal Mahmud</h4>
+
+                    <p>Clinical & Interventional Cardiologist</p>
+
+                    <button class="btn btn-primary"
+                        onclick="doctorDetails(1)">
+                        View Details
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dr. K. Khin U -->
+            <div class="col-md-4 mb-3">
+
+                <div class="card doctor-card p-3">
+
+                    <h4>Dr. K. Khin U (Chow Chow)</h4>
+
+                    <p>ENT & Head-Neck Surgeon</p>
+
+                    <button class="btn btn-primary"
+                        onclick="doctorDetails(2)">
+                        View Details
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Prof. Dr. Alvin Saha -->
+            <div class="col-md-4 mb-3">
+
+                <div class="card doctor-card p-3">
+
+                    <h4>Prof. Dr. Alvin Saha</h4>
+
+                    <p>Dermatologist</p>
+
+                    <button class="btn btn-primary"
+                        onclick="doctorDetails(3)">
+                        View Details
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Doctor Details -->
+<section id="doctorDetailsSection" class="py-5" style="display: none;">
+
+    <div class="container">
+
+        <div class="card shadow">
+
+            <div class="card-body">
+
+                <h2 id="doctorName" class="mb-3"></h2>
+
+                <p><strong>Degrees:</strong>
+                    <span id="doctorDegrees"></span>
+                </p>
+
+                <p><strong>Specialty:</strong>
+                    <span id="doctorSpecialty"></span>
+                </p>
+
+                <p><strong>Training:</strong>
+                    <span id="doctorTraining"></span>
+                </p>
+
+                <p><strong>Position:</strong>
+                    <span id="doctorPosition"></span>
+                </p>
+
+                <p><strong>Hospital:</strong>
+                    <span id="doctorHospital"></span>
+                </p>
+
+                <p><strong>Room:</strong>
+                    <span id="doctorRoom"></span>
+                </p>
+
+                <p><strong>Visiting Hours:</strong>
+                    <span id="doctorVisitingHours"></span>
+                </p>
+
+                <p><strong>Days:</strong>
+                    <span id="doctorDays"></span>
+                </p>
+
+                <p><strong>Closed:</strong>
+                    <span id="doctorClosed"></span>
+                </p>
+
+                <p><strong>Address:</strong>
+                    <span id="doctorAddress"></span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- Appointment -->
+    <section id="appointment" class="py-5">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Book an Appointment
+            </h2>
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-7">
+
+                    <div class="card shadow">
+
+                        <div class="card-body">
+
+                            <form id="appointmentForm">
+
+                                <!-- Name -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Patient Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="appointmentName"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Email -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="appointmentEmail"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Phone -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Phone
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="appointmentPhone"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Doctor -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Select Doctor
+                                    </label>
+
+                                    <select
+                                        class="form-select"
+                                        id="appointmentDoctor"
+                                        required>
+
+                                        <option value="">
+                                            Select a doctor
+                                        </option>
+
+                                        <option value="Dr. Iqbal Mahmud">
+                                            Dr.Iqbal Mahmud - Cardiologist
+                                        </option>
+
+                                        <option value="Dr. K. Khin U (Chow Chow)">
+                                            Dr. K. Khin U (Chow Chow)-ENT & Head-Neck Surgeon
+
+                                        </option>
+
+                                        <option value="Prof. Dr. Alvin Saha">
+                                           Prof. Dr. Alvin Saha-Dermatologist
+
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <!-- Date -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Appointment Date
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        class="form-control"
+                                        id="appointmentDate"
+                                        required>
+
+                                </div>
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary w-100">
+
+                                    Book Appointment
+
+                                </button>
+
+                                <p
+                                    id="appointmentMessage"
+                                    class="mt-3 text-center">
+                                </p>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- Appointment List -->
+<section id="appointmentList" class="py-5 bg-light">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Appointment List
+        </h2>
+        <button class="btn btn-primary mb-3" onclick="loadAppointments()">
+    Show All
+</button>
+<input
+    type="text"
+    id="searchAppointment"
+    class="form-control mb-3"
+    placeholder="Search patient or doctor">
+        <div class="card shadow">
+
+            <div class="card-body">
+
+                <table class="table table-bordered text-center">
+
+                    <thead>
+                        <tr>
+                            <th>Serial</th>
+                            <th>Patient Name</th>
+                            <th>Doctor</th>
+                            <th>Date</th>
+                            <th>Status</th>
+<th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="appointmentTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- Sign Up -->
+    <section id="signup" class="py-5 form-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Create an Account
+            </h2>
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-6">
+
+                    <div class="card shadow">
+
+                        <div class="card-body">
+
+                            <form id="signupForm">
+
+                                <!-- Name -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Full Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="name"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Email -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Phone -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Phone
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="phone"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Password -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Password
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="password"
+                                        required>
+
+                                </div>
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-success w-100">
+
+                                    Sign Up
+
+                                </button>
+
+
+                                <p
+                                    id="signupMessage"
+                                    class="mt-3 text-center">
+                                </p>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Sign In -->
+    <section id="signin" class="py-5">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Sign In
+            </h2>
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-6">
+
+                    <div class="card shadow">
+
+                        <div class="card-body">
+
+                            <form id="signinForm">
+
+                                <!-- Email -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="signinEmail"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Password -->
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Password
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="signinPassword"
+                                        required>
+
+                                </div>
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary w-100">
+
+                                    Sign In
+
+                                </button>
+
+
+                                <p
+                                    id="signinMessage"
+                                    class="mt-3 text-center">
+                                </p>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p class="mb-0">
+            &copy; <span id="year"></span> Care Hospital.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        // Current Year
+        document.getElementById("year").innerText =
+            new Date().getFullYear();
+            let editingId = null;
+let appointmentsData = [];
+// Doctor Details
+
+function doctorDetails(id) {
+
+    fetch("http://localhost:3000/doctor/" + id)
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            if (data.success) {
+
+                document.getElementById("doctorDetailsSection").style.display = "block";
+
+                document.getElementById("doctorName").innerText = data.name;
+
+                document.getElementById("doctorDegrees").innerText =
+                    data.degrees || "Not available";
+
+                document.getElementById("doctorSpecialty").innerText =
+                    data.specialty || "Not available";
+
+                document.getElementById("doctorTraining").innerText =
+                    data.training || "Not available";
+
+                document.getElementById("doctorPosition").innerText =
+                    data.position || "Not available";
+
+                document.getElementById("doctorHospital").innerText =
+                    data.hospital || "Not available";
+
+                document.getElementById("doctorRoom").innerText =
+                    data.room || "Not available";
+
+                document.getElementById("doctorVisitingHours").innerText =
+                    data.visitingHours || "Not available";
+
+                document.getElementById("doctorDays").innerText =
+                    data.days || data.offDays || "Not available";
+
+                document.getElementById("doctorClosed").innerText =
+                    data.closed || "Not available";
+
+                document.getElementById("doctorAddress").innerText =
+                    data.address || "Not available";
+
+                document.getElementById("doctorDetailsSection")
+                    .scrollIntoView({ behavior: "smooth" });
+
+            } 
+            else {
+
+                alert(data.message);
+
+            }
+
+        })
+
+        .catch(error => {
+
+            console.log(error);
+
+            alert("Backend connection failed.");
+
+        });
+
+}
+// Appointment
+
+document.getElementById("appointmentForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const name = document.getElementById("appointmentName").value;
+    const email = document.getElementById("appointmentEmail").value;
+    const phone = document.getElementById("appointmentPhone").value;
+    const doctor = document.getElementById("appointmentDoctor").value;
+    const date = document.getElementById("appointmentDate").value;
+
+    let url = "http://localhost:3000/appointment";
+    let method = "POST";
+
+    if (editingId !== null) {
+        url = "http://localhost:3000/appointment/" + editingId;
+        method = "PUT";
+    }
+
+    fetch(url, {
+        method: method,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            doctor: doctor,
+            date: date
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        alert(data.message);
+
+        if (data.success) {
+
+            document.getElementById("appointmentForm").reset();
+
+            editingId = null;
+
+            document.querySelector(
+                "#appointmentForm button[type='submit']"
+            ).innerText = "Book Appointment";
+
+            loadAppointments();
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        alert("Backend connection failed.");
+    });
+});
+// Load Appointment List
+
+function loadAppointments() {
+    fetch("http://localhost:3000/appointments")
+        .then(response => response.json())
+        .then(data => {
+
+            appointmentsData = data.appointments;
+
+            const tableBody = document.getElementById("appointmentTableBody");
+
+            tableBody.innerHTML = "";
+
+            data.appointments.forEach(function(appointment) {
+
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${appointment.serial}</td>
+                    <td>${appointment.name}</td>
+                    <td>${appointment.doctor}</td>
+                    <td>${appointment.date}</td>
+                    <td>${appointment.status}</td>
+
+                    <td>
+                        <button class="btn btn-warning btn-sm"
+                            onclick="editAppointment(${appointment.id})">
+                            Edit
+                        </button>
+
+                        <button class="btn btn-danger btn-sm"
+                            onclick="deleteAppointment(${appointment.id})">
+                            Delete
+                        </button>
+                    </td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.log(error);
+            alert("Backend connection failed.");
+        });
+}
+function editAppointment(id) {
+
+    const appointment = appointmentsData.find(function(a) {
+        return a.id === id;
+    });
+
+    if (!appointment) {
+        return;
+    }
+
+    document.getElementById("appointmentName").value = appointment.name;
+    document.getElementById("appointmentEmail").value = appointment.email;
+    document.getElementById("appointmentPhone").value = appointment.phone;
+    document.getElementById("appointmentDoctor").value = appointment.doctor;
+    document.getElementById("appointmentDate").value = appointment.date;
+
+    editingId = id;
+
+    document.querySelector(
+        "#appointmentForm button[type='submit']"
+    ).innerText = "Update Appointment";
+
+    document.getElementById("appointment").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+function deleteAppointment(id) {
+
+    if (!confirm("Are you sure you want to delete this appointment?")) {
+        return;
+    }
+
+    fetch("http://localhost:3000/appointment/" + id, {
+        method: "DELETE"
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        alert(data.message);
+
+        if (data.success) {
+            loadAppointments();
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        alert("Backend connection failed.");
+    });
+}
+        // Sign Up
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let password = document.getElementById("password").value;
+
+            let message =
+                document.getElementById("signupMessage");
+
+
+            fetch("http://localhost:3000/signup", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    password: password
+
+                })
+
+            })
+
+            .then(response => response.json())
+
+           .then(data => {
+
+    message.innerText =
+        data.message;
+
+    if (data.success) {
+
+        message.className =
+            "mt-3 text-center text-success";
+
+    } else {
+
+        message.className =
+            "mt-3 text-center text-danger";
+
+    }
+
+})
+.catch(error => {
+
+    console.log(error);
+
+    message.innerText =
+        "Backend connection failed.";
+
+    message.className =
+        "mt-3 text-center text-danger";
+
+});
+
+});
+    
+        // Sign In
+
+document.getElementById("signinForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let email =
+        document.getElementById("signinEmail").value;
+
+    let password =
+        document.getElementById("signinPassword").value;
+
+    let message =
+        document.getElementById("signinMessage");
+
+
+    fetch("http://localhost:3000/signin", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+
+            email: email,
+            password: password
+
+        })
+
+    })
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        if (data.success) {
+
+            message.innerText =
+                data.message;
+
+            message.className =
+                "mt-3 text-center text-success";
+
+        } else {
+
+            message.innerText =
+                data.message;
+
+            message.className =
+                "mt-3 text-center text-danger";
+
+        }
+
+    })
+
+    .catch(error => {
+
+        console.log(error);
+
+        message.innerText =
+            "Backend connection failed.";
+
+        message.className =
+            "mt-3 text-center text-danger";
+
+    });
+
+});
+
+    </script>
+
+</body>
+
+</html>
