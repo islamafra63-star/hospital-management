@@ -747,7 +747,7 @@ let appointmentsData = [];
 
 function doctorDetails(id) {
 
-    fetch("http://localhost:3000/doctor/" + id)
+    fetch("https://hospital-management-h78r.onrender.com/doctor/" + id)
 
         .then(response => response.json())
 
@@ -822,11 +822,11 @@ document.getElementById("appointmentForm").addEventListener("submit", function(e
     const doctor = document.getElementById("appointmentDoctor").value;
     const date = document.getElementById("appointmentDate").value;
 
-    let url = "http://localhost:3000/appointment";
+    let url = "https://hospital-management-h78r.onrender.com/appointment";
     let method = "POST";
 
     if (editingId !== null) {
-        url = "http://localhost:3000/appointment/" + editingId;
+        url = "https://hospital-management-h78r.onrender.com/appointment/" + editingId;
         method = "PUT";
     }
 
@@ -869,7 +869,7 @@ document.getElementById("appointmentForm").addEventListener("submit", function(e
 // Load Appointment List
 
 function loadAppointments() {
-    fetch("http://localhost:3000/appointments")
+    fetch("https://hospital-management-h78r.onrender.com/appointments")
         .then(response => response.json())
         .then(data => {
 
@@ -943,7 +943,7 @@ function deleteAppointment(id) {
         return;
     }
 
-    fetch("http://localhost:3000/appointment/" + id, {
+    fetch("https://hospital-management-h78r.onrender.com/appointment/" + id, {
         method: "DELETE"
     })
     .then(response => response.json())
@@ -974,7 +974,7 @@ function deleteAppointment(id) {
                 document.getElementById("signupMessage");
 
 
-            fetch("http://localhost:3000/signup", {
+            fetch("https://hospital-management-h78r.onrender.com/signup", {
 
                 method: "POST",
 
@@ -1043,7 +1043,7 @@ document.getElementById("signinForm").addEventListener("submit", function(event)
         document.getElementById("signinMessage");
 
 
-    fetch("http://localhost:3000/signin", {
+    fetch("https://hospital-management-h78r.onrender.com/signin", {
 
         method: "POST",
 
