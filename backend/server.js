@@ -9,7 +9,11 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.get("/", (req, res) => {
+    res.json({
+        message: "Hospital Backend is Running"
+    });
+});
 let users = [];
 
 const appointmentSchema = new mongoose.Schema({
@@ -395,8 +399,10 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("MongoDB connected");
 
-        app.listen(3000, () => {
-            console.log("Server running on port 3000");
+        const PORT = process.env.PORT || 3000;
+
+        app.listen(PORT, () => {
+            console.log("Server running on port " + PORT);
         });
     })
     .catch(error => {
