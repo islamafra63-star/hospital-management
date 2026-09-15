@@ -21,6 +21,7 @@ const appointmentSchema = new mongoose.Schema({
     serial: Number,
     name: String,
     email: String,
+    ownerEmail: String,
     phone: String,
     doctor: String,
     date: String,
@@ -227,6 +228,7 @@ app.post("/appointment", async (req, res) => {
             serial: serial,
             name: name,
             email: email,
+            ownerEmail:email,
             phone: phone,
             doctor: doctor,
             date: date,
@@ -320,17 +322,19 @@ app.get("/appointments", async (req, res) => {
 });
 // Delete Appointment
 app.delete("/appointment/:id", async (req, res) => {
-
     const id = Number(req.params.id);
+    const ownerEmail = req.body.ownerEmail;
 
     try {
-
-        const appointment = await Appointment.findOneAndDelete({ id: id });
+        const appointment = await Appointment.findOneAndDelete({
+            id: id,
+            ownerEmail: ownerEmail
+        });
 
         if (!appointment) {
             return res.json({
                 success: false,
-                message: "Appointment not found"
+                message: "You can only delete your own appointment"
             });
         }
 
@@ -340,17 +344,15 @@ app.delete("/appointment/:id", async (req, res) => {
         });
 
     } catch (error) {
-
         console.log(error);
 
         res.json({
             success: false,
             message: "Failed to delete appointment"
         });
-
     }
-
 });
+        
 // Cancel Appointment
 app.post("/cancel-appointment", async (req, res) => {
 
