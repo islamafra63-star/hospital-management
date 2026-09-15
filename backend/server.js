@@ -321,22 +321,42 @@ app.get("/appointments", async (req, res) => {
     }                                                                                                                                   
 });
 // Delete Appointment
+// Delete Appointment
 app.delete("/appointment/:id", async (req, res) => {
+
     const id = Number(req.params.id);
     const ownerEmail = req.body.ownerEmail;
 
     try {
-        const appointment = await Appointment.findOneAndDelete({
-            id: id,
-            ownerEmail: ownerEmail
+
+        if (!ownerEmail) {
+            return res.json({
+                success: false,
+                message: "Please sign in first"
+            });
+        }
+
+        const appointment = await Appointment.findOne({
+            id: id
         });
 
         if (!appointment) {
             return res.json({
                 success: false,
+                message: "Appointment not found"
+            });
+        }
+
+        if (appointment.ownerEmail !== ownerEmail) {
+            return res.json({
+                success: false,
                 message: "You can only delete your own appointment"
             });
         }
+
+        await Appointment.deleteOne({
+            id: id
+        });
 
         res.json({
             success: true,
@@ -344,6 +364,7 @@ app.delete("/appointment/:id", async (req, res) => {
         });
 
     } catch (error) {
+
         console.log(error);
 
         res.json({
@@ -352,7 +373,6 @@ app.delete("/appointment/:id", async (req, res) => {
         });
     }
 });
-        
 // Cancel Appointment
 app.post("/cancel-appointment", async (req, res) => {
 
